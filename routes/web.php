@@ -18,9 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes(['verify'=> true]);
+Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/test', 'Test@index');
 Route::view('about', "about",[
     'page_name' => "Contact me Page"
